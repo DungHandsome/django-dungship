@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!--<link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mediaqueries.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/logo.svg' %}" type="image/x-icon">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <a href="{% url 'home' %}"><div class="logo">Dungship</div></a>
+        <div>
+          <ul class="nav-links">
+            <li><a href="#about">Labs</a></li>
+            <li><a href="#experience">Courses</a></li>
+            <li><a href="#projects">Tags</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <img
+                id="modeToggle"
+                class="icon color-icon"
+                src="{% static 'assets/theme_light.png' %}"
+                src-light="{% static 'assets/theme_light.png' %}"
+                src-dark="{% static 'assets/theme_dark.png' %}"
+                alt="Color them icon"
+              />
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo">John Doe</div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li>
+              <img
+                id="modeToggle2"
+                class="icon color-icon"
+                src="{% static 'assets/theme_light.png' %}"
+                src-light="{% static 'assets/theme_light.png' %}"
+                src-dark="{% static 'assets/theme_dark.png' %}"
+                alt="Color them icon"
+              />
+            </li>
+          </div>
+        </div>
+      </nav>
+
+    {% block content %}{% endblock %}
+
+
+    <footer>
+        <nav>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p>Copyright &#169; 2024 Dung Luong. All Rights Reserved.</p>
+      </footer>
+    <!--<script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>-->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

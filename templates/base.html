@@ -16,9 +16,9 @@
         <div>
           <ul class="nav-links">
             <li><a href="#about">Labs</a></li>
-            <li><a href="#experience">Courses</a></li>
+            <li><a href="{% url 'courses' %}">Courses</a></li>
             <li><a href="#projects">Tags</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'home' %}#contact">Contact</a></li>
             <li>
               <img
                 id="modeToggle"
@@ -60,16 +60,16 @@
       </nav>
 
     {% block content %}{% endblock %}
-
-
+    <div class="divider" style="width: 6rem; height: 0.25rem;">
+    </div>
     <footer>
         <nav>
           <div class="nav-links-container">
             <ul class="nav-links">
-              <li><a href="#about">About</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">Labs</a></li>
+              <li><a href="{% url 'courses' %}">Courses</a></li>
+              <li><a href="#projects">Tags</a></li>
+              <li><a href="{% url 'home' %}#contact">Contact</a></li>
             </ul>
           </div>
         </nav>

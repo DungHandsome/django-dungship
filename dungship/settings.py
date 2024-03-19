@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'markdownify.apps.MarkdownifyConfig',
+    'mdeditor',
+
     'home',
 ]
 
@@ -105,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
+X_FRAME_OPTIONS = 'SAMEORIGIN' 
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -114,7 +116,44 @@ USE_I18N = True
 
 USE_TZ = True
 
+MARKDOWNIFY = {
+  "default": {
+     "WHITELIST_TAGS": [
+            'a',
+            'abbr',
+            'acronym',
+            'b',
+            'blockquote',
+            'em',
+            'i',
+            'li',
+            'ol',
+            'p',
+            'strong',
+            'ul',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'code',
+            'pre',
+            'img',
+            'figure',
+            'figcaption',
+            'br',
+            'hr',
+            'iframe',
+            'video',
+            'audio',
+            'embed',
+            'object',
+            'param',
+        ]
+  },
 
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 

@@ -7,15 +7,15 @@ def home(request):
 
 def courses(request):
     data = {
-        'tag':Tags.objects.all().order_by('-tag_name'),
+        'tag':Tags.objects.all().order_by('-tag_slug'),
         'course':Courses.objects.all().order_by('-date'),
         #'lab':Labs.objects.all().order_by('-date'),
     }
-    return render(request, 'home/courses.html', data)
+    return render(request, 'home/course/courses.html', data)
 
 def course_page(request, slug):
     data = {
         'course':Courses.objects.get(course_slug=slug),
-        'tag':Tags.objects.all().order_by('-tag_name'),
+        'tag':Tags.objects.all().order_by('-tag_slug'),
     }
-    return render(request, 'home/course_page.html', data)
+    return render(request, 'home/course/course_page.html', data)

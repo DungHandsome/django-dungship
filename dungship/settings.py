@@ -86,6 +86,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR , 'db.sqlite3'),
     }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': 'postgres',
+    #    'USER': 'postgres.fhcbnhpkotyfzuidwdrg',
+    #    'PASSWORD': 'tuandung18122009',
+    #    'HOST': 'aws-0-ap-southeast-1.pooler.supabase.com',
+    #    'PORT': '5432',
+    #}
 }
 
 
@@ -119,46 +127,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-MARKDOWNIFY = {
-  "default": {
-     "WHITELIST_TAGS": [
-            'a',
-            'abbr',
-            'acronym',
-            'b',
-            'blockquote',
-            'em',
-            'i',
-            'li',
-            'ol',
-            'p',
-            'strong',
-            'ul',
-            'h1',
-            'h2',
-            'h3',
-            'h4',
-            'h5',
-            'h6',
-            'code',
-            'pre',
-            'img',
-            'figure',
-            'figcaption',
-            'br',
-            'hr',
-            'iframe',
-            'video',
-            'audio',
-            'embed',
-            'object',
-            'param',
-            'div',
-
-        ]
-  },
-
-}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 

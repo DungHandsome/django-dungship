@@ -3,10 +3,9 @@ from mdeditor.fields import MDTextField
 # Create your models here.
 
 class Tags(models.Model):
-    tag_name = models.CharField(max_length=200, unique=True)
     tag_slug = models.SlugField(max_length=200, unique=True)
     def __str__(self):
-        return self.tag_name
+        return self.tag_slug
     
 class Courses(models.Model):
     course_slug = models.SlugField(max_length=1000, unique=True)

@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% load markdownify %}
+{% load markdown_extras %}
 {% block title %}{{course.course_title}}{% endblock %}
 {% block content %}
 <style>
@@ -10,19 +10,19 @@
         margin-bottom: 1.5rem!important;
     }
     .md-content h2{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .md-content h3{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     .md-content h4{
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
     .md-content h5{
-        font-size: 0.80rem;
+        font-size: 1.10rem;
     }
     .md-content h6{
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
     .md-content a {
       color: blue!important;
@@ -45,14 +45,19 @@
         <a href="" style="padding: 2px 2px 2px 2px; border-radius: 12px; border: 1px solid ; margin-right: 5px;">#{{tag}}</a>
         {% endfor %}
     </div>
-        <div class="divider" style="width: 6rem; height: 0.25rem;">
+        <div class="divider">
         </div>
     
     <div class="container">
+        <div style="text-align: center;">
+            <img src="{{course.course_image.url}}" alt="image" style="width: 70%; border-radius: 12px;">
+        </div>
         <div class="md-content">
-            {{course.course_content|markdownify}}
+            {{course.course_content | markdown | safe}}
         </div>
         
+    </div>
+    <div class="divider">
     </div>
 </div>
 

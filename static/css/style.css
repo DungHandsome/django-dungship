@@ -46,6 +46,16 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 999px;
+  width: 6rem; height: 0.25rem;
+}
+h6 {
+  color: var(--secondary-color);
+}
+h5 {
+  color: var(--secondary-color);
+}
+h4 {
+  color: var(--secondary-color);
 }
 h3 {
   color: var(--secondary-color);
@@ -424,9 +434,7 @@ article .icon {
 
 /* PROJECTS SECTION */
 
-#projects {
-  position: relative;
-}
+
 
 .color-container {
   border-color: var(--container-border);

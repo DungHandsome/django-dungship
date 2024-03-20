@@ -12,46 +12,48 @@
     }
 </style>
 <section id="projects">
-    <p class="section__text__p1">challenging multi-step experiences with quizzes and progress-tracking</p>
-    <h1 class="title">Courses</h1>
-    <div class="container-fluid mt-4">
-        <div class="row">
-            {% for i in course %}
-            
-            <div class="col-md-3" onclick="location.href='{% url 'course_page' i.course_slug%}'" style="cursor: pointer;">
-                <div class="article-container">
-                    <img
-                    {% if i.course_image %}
-                    src="{{i.course_image.url}}"
-                    {% else %}
-                    src="{% static 'assets/default-cover.webp' %}"
-                    {% endif %}
-                      
-                      alt="Project 3"
-                      class="project-img"
-                    />
-                  </div>
-                  <h2 class="experience-sub-title project-title" style="text-align: center;">{{i.course_title}}</h2>
-                  <div class="btn-container">
-                    {% for tag in i.course_tags.all %}
-                    <p style="padding: 2px 2px 2px 2px; border-radius: 12px; border: 1px solid ;">#{{tag}}</p>
-                    {% endfor %}
-                    
-                    
-                  </div>
-            </div>
-            {% endfor %}
+  <p class="section__text__p1">challenging multi-step experiences with quizzes and progress-tracking</p>
+  <h1 class="title">Courses</h1>
+  <div class="container-fluid mt-4">
+    <div class="row">
+        {% for i in course %}
+        
+        <div class="col-md-3" onclick="location.href='{% url 'course_page' i.course_slug%}'" style="cursor: pointer;">
+                <img
+                {% if i.course_image %}
+                src="{{i.course_image.url}}"
+                {% else %}
+                src="{% static 'assets/default-cover.webp' %}"
+                {% endif %}
+                  width="100%"
+                  alt="Project 3"
+                  class="course-img"
+                  style="border-radius: 12px;"
+                />
+              <h2 class="experience-sub-title project-title" style="text-align: center;">{{i.course_title}}</h2>
+              <div class="btn-container">
+                {% for tag in i.course_tags.all %}
+                <p style="padding: 2px 2px 2px 2px; border-radius: 12px; border: 1px solid ;">#{{tag}}</p>
+                {% endfor %}
+                
+                
+              </div>
         </div>
+        {% endfor %}
     </div>
+</section>
+    
+
+
+    <div class="divider"></div>
         
         
         
         
 
-  </section>
 
-
-
+    
+  </div>
   <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap-grid.min.css' %}">
   <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
 {% endblock %}

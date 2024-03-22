@@ -1,0 +1,62 @@
+{% extends "../../base.html" %}
+{% load static %}
+{% block title %}Dungship - labs{% endblock %}
+
+{% block content %}
+<style>
+    .col-md-3{
+        transition: all .2s ease-in-out;
+    }
+    .col-md-3:hover{
+        transform: scale(1.04);
+    }
+    section {
+      height: 100%!important;
+    }
+</style>
+<section id="projects">
+  <p class="section__text__p1">single dose video lessons and tutorials</p>
+  <h1 class="title">Labs</h1>
+  <div class="container-fluid mt-4">
+    <div class="row">
+        {% for i in lab %}
+        
+        <div class="col-md-3 mb-4" onclick="location.href='{% url 'lab_page' i.lab_slug%}'" style="cursor: pointer;">
+                <img
+                {% if i.lab_image %}
+                src="{{i.lab_image.url}}"
+                {% else %}
+                src="{% static 'assets/default-cover.webp' %}"
+                {% endif %}
+                  width="100%"
+                  alt="Project 3"
+                  class="course-img"
+                  style="border-radius: 12px;"
+                />
+              <h2 class="experience-sub-title project-title" style="text-align: center;">{{i.lab_title}}</h2>
+              <div class="d-flex flex-wrap justify-content-center">
+                {% for tag in i.lab_tags.all %}
+                <p style="padding: 2px 2px 2px 2px; border-radius: 0.375rem; border: 1px solid ; margin-right: 5px; margin-bottom: 5px;">#{{tag}}</p>
+                {% endfor %}
+                
+                
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+    
+
+
+    <div class="divider"></div>
+        
+        
+        
+        
+
+
+    
+  </div>
+  <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap-grid.min.css' %}">
+  <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
+{% endblock %}

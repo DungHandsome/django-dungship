@@ -15,10 +15,13 @@
         <a href="{% url 'home' %}"><div class="logo">Dungship</div></a>
         <div>
           <ul class="nav-links">
-            <li><a href="#about">Labs</a></li>
+            <li><a href="{% url 'labs' %}">Labs</a></li>
             <li><a href="{% url 'courses' %}">Courses</a></li>
             <li><a href="#projects">Tags</a></li>
             <li><a href="{% url 'home' %}#contact">Contact</a></li>
+            <li><button class="btn btn-color-1" onclick="location.href='{% url 'home' %}admin'">
+              Login
+            </button></li>
             <li>
               <img
                 id="modeToggle"
@@ -33,7 +36,7 @@
         </div>
       </nav>
       <nav id="hamburger-nav">
-        <div class="logo">John Doe</div>
+        <div class="logo">Dungship</div>
         <div class="hamburger-menu">
           <div class="hamburger-icon" onclick="toggleMenu()">
             <span></span>
@@ -45,6 +48,9 @@
             <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
             <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
             <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li><button class="btn btn-color-1" onclick="location.href='{% url 'home' %}admin'">
+              Login
+            </button></li>
             <li>
               <img
                 id="modeToggle2"

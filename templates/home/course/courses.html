@@ -10,6 +10,9 @@
     .col-md-3:hover{
         transform: scale(1.04);
     }
+    section {
+      height: 100%!important;
+    }
 </style>
 <section id="projects">
   <p class="section__text__p1">challenging multi-step experiences with quizzes and progress-tracking</p>
@@ -40,20 +43,10 @@
               </div>
         </div>
         {% endfor %}
+        
     </div>
 </section>
-    
-
-
-    <div class="divider"></div>
-        
-        
-        
-        
-
-
-    
-  </div>
+<div class="divider"></div>
   <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap-grid.min.css' %}">
   <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
 {% endblock %}

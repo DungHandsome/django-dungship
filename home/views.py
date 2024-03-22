@@ -19,3 +19,17 @@ def course_page(request, slug):
         'tag':Tags.objects.all().order_by('-tag_slug'),
     }
     return render(request, 'home/course/course_page.html', data)
+
+def labs(request):
+    data = {
+        'tag':Tags.objects.all().order_by('-tag_slug'),
+        'lab':Labs.objects.all().order_by('-date'),
+    }
+    return render(request, 'home/lab/labs.html', data)
+
+def lab_page(request, slug):
+    data = {
+        'lab':Labs.objects.get(lab_slug=slug),
+        'tag':Tags.objects.all().order_by('-tag_slug'),
+    }
+    return render(request, 'home/lab/lab_page.html', data)

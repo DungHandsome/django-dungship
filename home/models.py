@@ -19,11 +19,13 @@ class Courses(models.Model):
         return self.course_title
 
 class Labs(models.Model):
-    lab_name = models.CharField(max_length=1000, unique=True)
     lab_slug = models.SlugField(max_length=1000, unique=True)
     lab_title = models.CharField(max_length=1000)
+    lab_sub_title = models.TextField(blank=True, null=True)
     lab_image = models.ImageField(upload_to='labs_images/', blank=True, null=True)
+    lab_tags = models.ManyToManyField(Tags, related_name='labs_tags')
+    lab_youtube_id = models.CharField(max_length=1000, blank=True, null=True)
     lab_content = MDTextField()
     date = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):
-        return self.lab_name
+        return self.lab_title

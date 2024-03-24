@@ -4,37 +4,42 @@
 {% block title %}{{course.course_title}} | Dungship{% endblock %}
 {% block content %}
 <style>
-    .md-content h1{
+    .md-content h1 {
         font-size: 2rem;
-        margin-top: 1.5rem!important;
-        margin-bottom: 1.5rem!important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
-    .md-content h2{
+
+    .md-content h2 {
         font-size: 1.75rem;
     }
-    .md-content h3{
+
+    .md-content h3 {
         font-size: 1.5rem;
     }
-    .md-content h4{
+
+    .md-content h4 {
         font-size: 1.25rem;
     }
-    .md-content h5{
+
+    .md-content h5 {
         font-size: 1.10rem;
     }
-    .md-content h6{
+
+    .md-content h6 {
         font-size: 1rem;
     }
+
     .md-content a {
-      color: blue!important;
-      text-decoration: underline!important;
+        color: blue !important;
+        text-decoration: underline !important;
     }
 
     .md-content a:hover {
-      text-decoration: underline;
-      text-underline-offset: 1px!important;
-      text-decoration-color: var(--secondary-color);
+        text-decoration: underline;
+        text-underline-offset: 1px !important;
+        text-decoration-color: var(--secondary-color);
     }
-
 </style>
 
 <div class="course-content mb-5">
@@ -42,12 +47,13 @@
     <h1 class="title">{{course.course_title}}</h1>
     <div class="container d-flex flex-wrap" style="justify-content: center;">
         {% for tag in course.course_tags.all %}
-        <a href="" style="padding: 2px 2px 2px 2px; border-radius: 0.375rem; border: 1px solid ; margin-right: 5px;">#{{tag}}</a>
+        <a class="tag" href="{% url 'tag_page' tag.tag_slug %}" style="color: {{tag.tag_text_color}}!important;
+        background-color: {{tag.tag_background_color}}!important;">#{{tag}}</a>
         {% endfor %}
     </div>
-        <div class="divider">
-        </div>
-    
+    <div class="divider">
+    </div>
+
     <div class="container">
         {% if course.course_image %}
         <div style="text-align: center;">
@@ -57,13 +63,13 @@
         <div class="md-content">
             {{course.course_content | markdown | safe}}
         </div>
-        
+
     </div>
     <div class="divider">
     </div>
 </div>
 
-  
+
 
 <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap-grid.min.css' %}">
 <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>

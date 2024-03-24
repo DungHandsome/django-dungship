@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tags | Dungship{% endblock %}
+
+{% block content %}
+<style>
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<div class="container">
+    <div class="d-flex flex-wrap">
+        {% for i in tag %}
+        <div class="outer" style="padding: .5rem; display: inline-block;">
+            <a class="tag" style="
+            font-size: 1.5rem!important;
+            font-weight: 500; 
+            margin-right: .5rem;
+            padding: .5rem 1rem .625rem;
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            color: {{i.tag_text_color}}!important;
+            background-color: {{i.tag_background_color}}!important;" href="{% url 'tag_page' i.tag_slug %}">#{{i.tag_slug}}</a>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+<div class="divider"></div>
+
+
+
+
+
+<link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap-grid.min.css' %}">
+<script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.min.js' %}"></script>
+{% endblock %}

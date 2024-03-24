@@ -33,3 +33,18 @@ def lab_page(request, slug):
         'tag':Tags.objects.all().order_by('-tag_slug'),
     }
     return render(request, 'home/lab/lab_page.html', data)
+
+def tags(request):
+    data = {
+        'tag':Tags.objects.all().order_by('-tag_slug'),
+    }
+    return render(request, 'home/tag/tags.html', data)
+
+def tag_page(request, slug):
+    data = {
+        'tag':Tags.objects.get(tag_slug=slug),
+        'tag_course': Courses.objects.filter(course_tags__tag_slug=slug).order_by('-date'), 
+        'tag_lab': Labs.objects.filter(lab_tags__tag_slug=slug).order_by('-date'),
+    }
+    print(Courses.objects.filter(course_tags__tag_slug=slug).order_by('-date'))
+    return render(request, 'home/tag/tag_page.html', data)

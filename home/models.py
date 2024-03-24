@@ -4,6 +4,9 @@ from mdeditor.fields import MDTextField
 
 class Tags(models.Model):
     tag_slug = models.SlugField(max_length=200, unique=True)
+    tag_text_color = models.CharField(max_length=200, null=True, blank=True)
+    tag_background_color = models.CharField(max_length=200, null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):
         return self.tag_slug
     
